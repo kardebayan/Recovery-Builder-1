@@ -1,8 +1,8 @@
 env:
     MANIFEST: https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
-    DT_LINK: https://github.com/kardebayan/omni_device_10or_G.git
-    DEVICE: G
-    OEM: 10or
+    DT_LINK: https://github.com/RMX1831/android_device_RMX1831_TWRP
+    DEVICE: RMX1831
+    OEM: realme
     DT_PATH: device/$OEM/$DEVICE
     TARGET: recoveryimage
     EXTRA_CMD: git clone https://github.com/OrangeFoxRecovery/Avatar.git misc
@@ -48,7 +48,7 @@ task:
       - cd ~/work
       - repo init --depth=1 -u $MANIFEST 
       - repo sync -j16 --force-sync --no-tags --no-clone-bundle
-      - git clone $DT_LINK $DT_PATH
+      - git clone $DT_LINK -b android-9.0 $DT_PATH
       - echo "============================"
       - echo "Syncing Complete!"
       - echo "============================"
